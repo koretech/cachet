@@ -1,0 +1,9 @@
+version: "2"
+services:
+  main:
+    image: cachet:latest
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - /data

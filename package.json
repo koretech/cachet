@@ -1,0 +1,15 @@
+{
+  "name": "@koretech/cachet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "docker build -t cachet:latest .",
+    "start": "docker-compose up -d",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down",
+    "bash": "docker exec -it cachet_main_1 /bin/bash",
+    "rm:untagged": "docker images -q --filter \"dangling=true\" | xargs docker rmi",
+    "rm:stopped": "docker rm `docker ps --no-trunc -aq`"
+  }
+}
